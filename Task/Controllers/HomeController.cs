@@ -12,7 +12,40 @@ namespace Task.Controllers
         {
             _cars= new List<Car>
             {
-                new Car{Id=1,Name="Bmw"},
+                new Car{Id=1,
+                    Name="Bmw",
+                    CarModels=new List<CarModel>
+                    {
+                        new CarModel
+                        {
+                            Name="E23",
+                            Date=1978,
+                            Price=30000
+                            
+                        },
+                        new CarModel
+                        {
+                            Name="E24",
+                            Date=1985,
+                            Price=36000
+
+                        },
+                        new CarModel
+                        {
+                            Name="E34",
+                            Date=1994,
+                            Price=6000
+
+                        },
+                        new CarModel
+                        {
+                            Name="E39",
+                            Date=1999,
+                            Price=12000
+
+                        },
+                    }
+                },
                 new Car{Id=2,Name="Mercedes"},
                 new Car{Id=3,Name="Lada"},
             };
@@ -46,6 +79,7 @@ namespace Task.Controllers
 
         public IActionResult Details(int? id)
         {
+            Car car = _cars.Find(c => c.Id == id);
             return View();
         }
     }

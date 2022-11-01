@@ -14,19 +14,13 @@
     
     <h3>Cars</h3>
    @foreach (Car car in Model.Cars)
-    {
-      <select > 
-       <option >
+    {   
            <p>
                <a asp-controller="home" asp-action="details" asp-route-id="@car.Id">
-                   @car.Name
+                 @car.Name
                </a>
            </p>
-       </option>
-       <option> </option>
-       <option></option>
-       
-     </select>
+      
     }
     
 
